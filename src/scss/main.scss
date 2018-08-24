@@ -1,0 +1,21 @@
+body {
+  font-family: sans-serif;
+}
+
+img {
+  width: 200px;
+  height: auto;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+}
+
+.tesla {
+  background-image: url("../images/tesla.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 300px;
+}
