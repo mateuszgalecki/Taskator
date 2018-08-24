@@ -12,12 +12,16 @@ In development mode, localhost server will run on `localhost:8080` with autorelo
 
 ### File structure:
 ```
-- src
-    - images
-    - scss
-    - js
-    - index.js (main js file with ReactDOM)
-    - index.html (HTML template)
-- webpack.config.js
-- package.json
+src/
+    images/
+    scss/
+    js/
+    index.js
+    index.html
+.babelrc
+webpack.config.js
+package.json
 ```
+
+- `index.html` in `src` folder is a HTML template for our project.
+- `index.js` in `src` folder is main JavaScript file with ReactDOM.render() function. This is good place to import `scss` file.
