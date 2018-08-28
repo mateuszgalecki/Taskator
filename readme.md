@@ -18,7 +18,6 @@ src/
     js/
     index.js
     index.html
-.babelrc
 webpack.config.js
 package.json
 ```

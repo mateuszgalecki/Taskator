@@ -46,7 +46,9 @@ module.exports = function (env) {
                                 ? browsers.dev
                                 : browsers.prod
                         }
-                    }]
+                    }],
+                    'stage-2',
+                    'react'
                 ],
                 plugins: [
                     'syntax-dynamic-import'
