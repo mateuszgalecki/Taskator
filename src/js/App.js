@@ -1,12 +1,27 @@
-import React from 'react'
-import reactLogo from '../images/react-logo.png'
+import React from 'react';
+import MainMob from './MainMob';
+import CloudTry from './AddTaskMob';
+import LoginMob from './LoginMob'
+import firebase, {db} from './Firebase';
 
+
+
+// miejsce na warunki związane z RWD
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            workspace: 'tryWorkspace',
+            user: 'tryUser'
+        }
+    }
     render() {
         return (
-            <h1>YO YO YO YO YO</h1>
+            <LoginMob/>
         );
     }
 }
 
+
+/*<CloudTry workspace={this.state.workspace} user={this.state.user}/>*/
 export default App

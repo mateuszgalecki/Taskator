@@ -1,21 +1,272 @@
+@import "reset.css";
+
 body {
-  font-family: sans-serif;
+  background-color: #349D57;
+  font-family: 'Roboto Mono', monospace;
 }
 
-img {
-  width: 200px;
-  height: auto;
+button {
+  border: none;
 }
 
 #app {
   display: flex;
   justify-content: center;
+  height: 100vh;
 }
 
-.tesla {
-  background-image: url("../images/tesla.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 300px;
+.loginDiv {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .loginInput {
+    border: none;
+    border-bottom: 2px solid #06130A;
+    background-color: #349D57;
+    outline: none;
+    margin-bottom: 10vh;
+    &::placeholder {
+      color: #06130A;
+      font-family: 'Roboto Mono', monospace;
+    }
+  }
+  .loginButton {
+    outline: none;
+    margin-bottom: 4vh;
+    color: #06130A;
+    background-color: #349D57;
+    border: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 24px;
+  }
+}
+
+
+
+.mainContainerMob {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .addButtonMob {
+    width: 200px;
+    height: 200px;
+    background-color: #091B0E;
+    color: white;
+    font-size: 270px;
+    border-radius: 50%;
+    border: 2px solid #75D1A2;
+    padding-top: 4px;
+    margin-bottom: 20px;
+    line-height: 1px;
+    outline: none;
+    text-align: center;
+    &:hover {
+      animation: addButtonHover 0.1s linear forwards;
+    }
+    @keyframes addButtonHover {
+      0% {
+        color: white;
+      }
+      100% {
+        color: black;
+      }
+    }
+  }
+  .mainNavInfoMob {
+    position: fixed;
+    bottom: 30px;
+    left: 100vw;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+  }
+}
+
+.message {
+  position: fixed;
+  left: 135vw;
+  top: 13vh;
+  display: none;
+}
+
+.noUser {
+  color: red;
+}
+
+.sent {
+  color: springgreen;
+}
+
+.selfUser {
+  left: 123vw;
+  color: deepskyblue;
+}
+
+.displayIt {
+  display: block !important;
+}
+
+.logoMob {
+  color: #0E2A16;
+  position: fixed;
+  left: 100vw;
+  top: 17px;
+  font-size: 35px;
+  width: 100vw;
+  text-align: center;
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #0E2A16;
+    position: absolute;
+    bottom: -15px;
+  }
+}
+
+.first {
+  left: 0;
+}
+
+.addTaskFooter {
+  color: #0E2A16;
+  position: fixed;
+  left: 0;
+  bottom: calc(17px - 100vh);
+  font-size: 26px;
+  width: 100vw;
+  text-align: center;
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #0E2A16;
+    position: absolute;
+    top: -15px;
+  }
+}
+
+.plus100 {
+  left: 200vw;
+}
+
+.tasksDiv {
+  padding: 5vw;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.fp-controlArrow {
+  display: none;
+}
+
+.messArea {
+  height: 36vh;
+  width: 80vw;
+  border: none;
+  border-bottom: 2px solid #06130A;
+  background-color: #349D57;
+  margin-left: 8vw;
+  outline: none;
+  &::placeholder {
+    color: #06130A;
+    font-family: 'Roboto Mono', monospace;
+  }
+}
+.inputName {
+  width: 55vw;
+  border: none;
+  border-bottom: 2px solid #06130A;
+  background-color: #349D57;
+  margin-left: 8vw;
+  outline: none;
+  margin-bottom: 2vh;
+  position: relative;
+  z-index: 10;
+  &::placeholder {
+    color: #06130A;
+    font-family: 'Roboto Mono', monospace;
+  }
+}
+
+.userInput {
+  width: 55vw;
+  border: none;
+  border-bottom: 2px solid #06130A;
+  background-color: #349D57;
+  margin-left: 12vw;
+  outline: none;
+  margin-bottom: 2vh;
+  position: relative;
+  z-index: 10;
+  &::placeholder {
+    color: #06130A;
+    font-family: 'Roboto Mono', monospace;
+  }
+}
+
+.requests {
+  display: flex;
+  flex-direction: column;
+  padding: 10vw;
+}
+
+.sentRequests {
+  height: 42vh;
+  border: 1px solid black;
+  margin-bottom: 4vh;
+  background-color: #4FC474;
+  position: relative;
+  &:before {
+    content: 'sent requests';
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 14px;
+  }
+}
+
+.gottenRequests {
+  background-color: #4FC474;
+  height: 42vh;
+  border: 1px solid black;
+  position: relative;
+  &:before {
+    content: 'gotten requests';
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 14px;
+  }
+}
+
+.answer {
+  position: fixed;
+  font-size: 10px;
+  left: 50vw;
+  top: 3.5vh;
+  display: none;
+}
+
+.reqAccepted {
+  color: springgreen;
+}
+
+.reqDeclined {
+  color: red;
 }
