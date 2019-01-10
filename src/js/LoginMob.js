@@ -43,7 +43,7 @@ class LoginMob extends React.Component {
         });
     }
 
-    handlePassword = (e) => {
+    handleWorkspace = (e) => {
         let workspace = e.target.value;
         this.setState({
             workspace: workspace
@@ -295,19 +295,21 @@ class LoginMob extends React.Component {
     checkRequest = (reqName, accepted) => {
         let newAllData = {...this.state.allData};
 
-        let newSentRequests = newAllData.users[this.state.userIndex].data.sentRequests.filter(request => {
-            return request.name != reqName
-        })
-        newAllData.users[this.state.userIndex].data.sentRequests = newSentRequests
-        this.setState({
-            sentRequests: newSentRequests,
-            allData: newAllData
-        }, () => {
-            console.log(this.state.allData, this.state.sentRequests)
-        })
-        let docRef = db.collection('taskator').doc(this.state.workspace);
-        docRef.set(newAllData);
-        
+        if (accepted != 0) {
+            let newSentRequests = newAllData.users[this.state.userIndex].data.sentRequests.filter(request => {
+                return request.name != reqName
+            })
+            newAllData.users[this.state.userIndex].data.sentRequests = newSentRequests
+            this.setState({
+                sentRequests: newSentRequests,
+                allData: newAllData
+            }, () => {
+                console.log(this.state.allData, this.state.sentRequests)
+            })
+            let docRef = db.collection('taskator').doc(this.state.workspace);
+            docRef.set(newAllData);
+        }
+
         let info;
         if (accepted == 0) {
             console.log('no response')
@@ -336,7 +338,7 @@ class LoginMob extends React.Component {
                 <div className='loginDiv'>
                     <LogoMobFirst/>
                     <input className='loginInput' type='text' placeholder='Login' onChange={this.handleLogin}/>
-                    <input className='loginInput' type='text' placeholder='Workspace' onChange={this.handlePassword}/>
+                    <input className='loginInput' type='text' placeholder='Workspace' onChange={this.handleWorkspace}/>
                     <button className='loginButton' onClick={this.handleGo}>LOG IN</button>
                 </div>
             );

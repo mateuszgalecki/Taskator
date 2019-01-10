@@ -48,6 +48,7 @@
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.10",
     "firebase": "^5.7.0",
+    "gh-pages": "^2.0.1",
     "react-easy-swipe": "0.0.17",
     "react-scrollbar": "^0.5.4"
   }
